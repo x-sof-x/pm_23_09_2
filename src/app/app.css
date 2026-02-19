@@ -1,0 +1,21 @@
+.university-card {
+  margin-top: 20px;
+  border-left: 5px solid #ffc107; /* Фірмовий колір Політехніки */
+  padding-left: 15px;
+  background: #fff9e6;
+  padding: 15px;
+  border-radius: 0 10px 10px 0;
+}
+
+.motto {
+  font-style: italic;
+  font-weight: bold;
+  color: #555;
+  margin-top: 10px;
+  display: block;
+}
+
+.fact-item {
+  margin: 10px 0;
+  font-size: 0.95em;
+}
