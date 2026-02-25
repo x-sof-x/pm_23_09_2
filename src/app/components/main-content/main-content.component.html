@@ -1,0 +1,65 @@
+<h1 class="name">
+    <span class="first">{{ firstName }}</span><br>
+    <span class="last">{{ lastName }}</span>
+  </h1>
+<div class="name-divider"></div>
+<p class="position">{{ position }}</p>
+
+<section class="contact-info block">
+  <h2>CONTACT INFO_</h2>
+  <div class="row block-content active">
+    <div class="col-sm-4"><strong>PHONE</strong><br>{{ contactInfo.phone }}</div>
+    <div class="col-sm-4"><strong>EMAIL</strong><br>{{ contactInfo.email }}</div>
+    <div class="col-sm-4"><strong>AREA</strong><br>{{ contactInfo.area }}</div>
+  </div>
+</section>
+
+<section class="education mt-4">
+  <h2>EDUCATION_</h2>
+  <div class="row">
+    @for (edu of education; track edu) {
+      <div class="col-sm-6">
+        <strong>{{ edu.major }}</strong><br>
+        <span class="uni-name">{{ edu.uni }} <br> {{ edu.years }}</span>
+      </div>
+    }
+  </div>
+</section>
+
+<section class="experience">
+  <h2>EXPERIENCE_</h2>
+
+  @if (experiences && experiences.length > 0) {
+    
+    @for (exp of experiences; track exp.title) {
+      <div class="job-item">
+        <div class="job-header">
+          <div class="job-title">{{ exp.title }}</div>
+        </div>
+        <div class="company-row">
+          <div class="job-date">{{ exp.date }}</div>
+          <div class="company">{{ exp.company }}</div>
+        </div>
+        <div class="job-description">{{ exp.description }}</div>
+      </div>
+    }
+
+  } @else {
+    <div class="no-experience">
+      <p>Наразі я зосереджена на навчанні та розробці власних проектів, таких як "Ohorod".</p>
+    </div>
+  }
+</section>
+
+<section class="expertise">
+  <h2>EXPERTISE_</h2>
+  <div class="expertise-list">
+    @for (skill of expertise; track skill) {
+      <div class="expertise-item">
+        <div class="circle {{ skill.percentClass }}">
+          <span>{{ skill.title }}</span>
+        </div>
+      </div>
+    }
+  </div>
+</section>

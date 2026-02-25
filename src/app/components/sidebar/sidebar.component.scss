@@ -1,0 +1,95 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/extend';
+
+.photo-box {
+  line-height: 0; // Прибирає білу лінію під фото
+  
+  .yellow-block {
+    width: 100%;
+    height: 45px; // Товста лінія зверху і знизу
+    background: v.$yellow-color; // Використовуй свою змінну для жовтого
+    display: block;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%); // Чорно-білий ефект як на макеті
+  }
+}
+.footer-line {
+  height: 8px;              
+  background: v.$yellow-color;     
+  width: 100%;
+  margin: 0;                
+}
+.about-me {
+  margin-top: 0;          
+  padding: 45px;
+  background: v.$grey-color;      
+  text-align: left;
+
+  h2 {
+    margin-top: 0;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  p { 
+    font-family: v.$font-main;
+    font-weight: 300;          
+    font-size: 13px;           
+    line-height: 1.8;         
+    color: v.$text-color-light;             
+    letter-spacing: 0.5px;   
+    margin-bottom: 0;
+  }
+}
+
+.hobbies { 
+
+  padding: 0 45px 45px 45px;
+  background: v.$grey-color;
+  text-align: left;
+
+  h2 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+  }
+
+  .d-flex {
+    display: flex;
+    justify-content: space-between; // Розподіляє хобі рівномірно
+    flex-wrap: wrap;
+  }
+
+  .hobby-item { 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .hobby-icon {
+      width: 35px; // Трохи збільшили для зручності
+      height: 35px;
+      border: 2px solid v.$text-color;
+      border-radius: 50%;
+      @extend %flex-center; // Твій готовий екстенд
+      font-size: 16px;
+      color: v.$text-color;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 12px;
+      font-weight: 500;
+      color: v.$text-color;
+      text-transform: capitalize;
+    }
+  }
+}

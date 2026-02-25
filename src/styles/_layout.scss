@@ -1,0 +1,81 @@
+@use "variables" as v;
+.resume {
+  padding-top: 0px;
+padding-bottom: 0px;
+}
+.left-col-bg {
+  background-color: v.$grey-color; 
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 20px solid v.$yellow-color; 
+}
+.photo-box {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.photo-box img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+.yellow-block {
+    background-color: v.$yellow-color;
+    width: 100%;
+    height: 60px; 
+    margin: 0px 0;
+}
+.resume-card {
+  max-width: 960px;
+  margin: 0 auto;
+ padding: 0px ;
+  background: v.$white-color;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+@media (max-width: 768px) {
+  .resume-card {
+    padding: 20px;
+    max-width: 100%;
+  }
+}
+body {
+  font-family: Arial, sans-serif;
+  background: v.$white-color;
+  color: v.$text-color;
+}
+h2 {
+   margin-top: 60px;
+   font-size: 25px;
+   font-weight: 700;
+   margin-bottom: 20px;
+   text-transform: uppercase;
+}
+.resume-bg {
+  background-color: v.$resume-bg-color; 
+  min-height: 100vh;
+}
+.block-content {  // поки прихований контент
+    display: none;      
+    margin-top: 10px;
+}
+.block-content.active { // щоб колонки горизонтально відображались
+    display: flex;      
+}
+.arrow {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    float: right;       
+}
+.arrow.rotate {
+    transform: rotate(180deg); 
+}
+.contact-info h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

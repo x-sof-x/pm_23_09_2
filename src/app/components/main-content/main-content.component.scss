@@ -1,0 +1,175 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/extend';
+@use '../../../styles/mixins' as m;
+@use 'sass:math';
+
+
+.contact-info, .education, .experience, .expertise {
+  h2 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: v.$text-color;
+    margin-top: 0;
+  }
+}
+
+.name {
+  margin-top: 50px;
+  text-transform: uppercase;
+  font-size: 65px;
+  margin-bottom: 0;
+  line-height: 0.8; 
+
+  .first {
+    font-weight: 300;
+    display: inline-block;
+  }
+
+  .last {
+    font-weight: 600;
+    display: inline-block;
+    margin-top: -5px; 
+  }
+}
+
+.name-divider {
+  width: 40px;
+  height: 2px;
+  background-color: v.$yellow-color;
+  margin-top: 25px; 
+  margin-bottom: 15px;
+}
+
+.position {
+  margin-top: 12px;
+  margin-bottom: 30px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: v.$text-color-light;
+}
+
+.contact-info {
+  margin-bottom: 30px;
+  
+  .contact-detail {
+    font-size: 12px;
+    color: v.$text-color;
+    line-height: 1.4;
+  }
+}
+
+.education {
+  margin-bottom: 30px;
+  
+  .uni-name {
+    font-family: v.$font-main;
+    font-weight: 400;
+    font-size: 13px;
+  }
+}
+
+.experience {
+  // Використання математичних операцій з твоїх змінних
+  margin-top: v.$base-margin * 4.50; 
+}
+
+.job-item {
+  margin-bottom: v.$gap * 2.66;
+}
+
+.job-header {
+  margin-bottom: math.div(v.$gap, 3);
+}
+
+.company-row {
+  @extend %flex-center;
+  justify-content: left;
+  gap: 10px; 
+  margin-bottom: 8px;
+}
+
+.job-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: v.$text-color;
+}
+
+.job-date {
+  background-color: v.$yellow-color; 
+  color: v.$white-color;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 5px;
+}
+
+.company {
+  font-size: 14px;
+  color: v.$subtone-color;
+  margin-bottom: 8px;
+  margin-top: 10px;
+}
+
+.job-description {
+  font-size: 14px;
+  color: v.$text-color-light;
+  line-height: 1.6;
+}
+
+.expertise {
+  h2 {
+    margin-top: 130px;
+  }
+
+  .expertise-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .expertise-item {
+    flex: 0 0 auto;
+    text-align: center;
+  }
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: relative;
+  @extend %flex-center;
+  font-size: 10px;
+  font-weight: 300;
+  line-height: 1.1;
+
+  &::after {
+    content: "";
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: v.$white-color;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+    padding: 0 4px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  // Градієнти для прогрес-барів
+  &.p90 { @include m.circle-gradient(90%); }
+  &.p85 { @include m.circle-gradient(85%); }
+  &.p80 { @include m.circle-gradient(80%, 160deg); }
+  &.p75 { @include m.circle-gradient(75%, 180deg); }
+}

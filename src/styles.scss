@@ -1,0 +1,19 @@
+.resume-wrapper {
+  display: flex;
+  justify-content: center;   
+  align-items: flex-start;
+  padding: 60px 100px; 
+  background-color: #f5f5f5; 
+  min-height: 100vh;         
+}
+.resume-card {
+  max-width: 1000px;
+  width: 100%;
+  background-color: #fff;
+  overflow: hidden;
+  
+  // Додаємо невеликий відступ зліва
+  // 15px-20px зазвичай виглядає як акуратна рамка
+  padding-left: 20px; 
+  padding-right: 20px;
+}
